@@ -1,0 +1,1273 @@
+* {
+    /* background-color: palegoldenrod;
+    font-size: 14pt; */
+    font-family: "Arizona Text Regular";
+}
+
+body {
+    background-color: palegoldenrod;
+    font-size: 14pt;
+}
+
+a {
+    color: black;
+}
+
+button {
+    font-size: 14pt;
+    background-color: palegoldenrod;
+    user-select: none;
+}
+
+textarea {
+    font-size: 14pt;
+    color: black;
+    background-color: palegoldenrod;
+}
+
+input:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: "Arizona Text Regular";
+    src: url("/fonts/ABCArizonaText-Regular-Trial.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Arizona Text Regular Italic";
+    src: url("/fonts/ABCArizonaText-RegularItalic-Trial.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Arizona Text Medium";
+    src: url("/fonts/ABCArizonaText-Medium-Trial.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Arizona Text Medium Italic";
+    src: url("/fonts/ABCArizonaText-MediumItalic-Trial.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Arizona Text Thin";
+    src: url("/fonts/ABCArizonaText-Thin-Trial.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Arizona Text Thin Italic";
+    src: url("/fonts/ABCArizonaText-ThinItalic-Trial.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Diatype Mono Light";
+    src: url("/fonts/ABCDiatypeMono-Light-Trial.woff2") format("woff2");
+}
+
+div.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+span.home {
+    text-align: center;
+    font-family: "Arizona Text Thin";
+    font-size: 36pt;
+}
+
+button.register {
+    position: relative;
+    width: 95px;
+    height: 40px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 10pt;
+}
+
+button.login {
+    position: relative;
+    width: 95px;
+    height: 40px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 10pt;
+}
+
+button.logout {
+    position: relative;
+    width: 95px;
+    height: 40px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 10pt;
+}
+
+button:active,
+button.submit:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+button.submit {
+    position: relative;
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 10pt;
+    background-color: palegoldenrod;
+    /* font-size: 14px; */
+}
+
+span.logo {
+    display: inline-block;
+    font-family: "Arizona Text Regular";
+    font-size: 54pt;
+    font-weight: normal;
+    color: black;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    margin: 0;
+    user-select: none;
+}
+
+h1.logo + a {
+    text-decoration: none;
+}
+
+div.nav {
+    margin-left: 20px;
+}
+
+span.error {
+    position: absolute;
+    top: 15%;
+}
+
+span.link {
+    position: absolute;
+    bottom: 20%;
+}
+
+span.link2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 27%;
+}
+
+/* Registration */
+
+span.title {
+    position: relative;
+    text-align: center;
+    font-family: "Arizona Text Thin Italic";
+    font-size: 36pt;
+}
+
+section.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    /* border: 1px black dotted; */
+}
+
+form.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 120px;
+}
+
+label.registration {
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+    height: 50px;
+    width: 255px;
+}
+
+input.registration {
+    margin: 13px 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 235px;
+    text-align: left;
+    font-size: 14pt;
+    padding: 0 10px;
+}
+
+input.linkEditor::placeholder {
+    opacity: 1;
+}
+
+input::placeholder {
+    opacity: 0;
+}
+
+span.floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: -6px;
+    left: 10px;
+    transform: translateY(28px);
+    font-size: 14pt;
+    transition-duration: 300ms;
+    color: grey;
+}
+
+label:focus-within > span,
+input:not(:placeholder-shown) + span {
+    color: grey;
+    font-size: 10pt;
+    transform: translateY(10px);
+}
+label:hover > span,
+input:not(:placeholder-shown) + span {
+    color: grey;
+    font-size: 10pt;
+    transform: translateY(10px);
+}
+
+/* Login */
+
+section.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 120px;
+}
+
+label.login {
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+    height: 50px;
+    width: 255px;
+}
+
+input.login {
+    margin: 13px 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 235px;
+    text-align: left;
+    padding: 0 10px;
+    font-size: 14pt;
+}
+
+/* Reset */
+
+section.reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    /* border: 1px black dotted; */
+}
+
+form.reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 120px;
+}
+
+label.reset {
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+    height: 50px;
+    width: 255px;
+}
+
+input.reset {
+    margin: 13px 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 235px;
+    text-align: left;
+    padding: 0 10px;
+    font-size: 14pt;
+}
+
+form.verify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 120px;
+}
+
+label.verify {
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+    height: 50px;
+    width: 255px;
+}
+
+input.verify {
+    margin: 13px 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 235px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+input.otp {
+    width: 50px !important;
+    height: 50px;
+    border: 2px goldenrod solid;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 18pt;
+    margin: 0 10px 50px;
+    font-family: "Diatype Mono Light";
+}
+
+section.verify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    /* border: 1px black dotted; */
+}
+
+section.success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    /* border: 1px black dotted; */
+}
+
+span.success {
+    position: fixed;
+    top: 120px;
+}
+
+/* App */
+div.appContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 1px black solid;
+    background-color: palegoldenrod;
+    border-radius: 20px;
+}
+
+div.header-left {
+    /* border: 2px dotted blue; */
+    width: 50%;
+    height: 100%;
+}
+
+div.header-right {
+    /* border: 2px dotted black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-right: 20px;
+}
+
+div.profilePic {
+    padding: 0 10px 0 20px;
+    height: 60px;
+}
+
+img.profilePic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* div.uploader {
+    position: fixed;
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 25%;
+    background-color: palegoldenrod;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+div.uploader {
+    /* position: fixed; */
+    /* border: 1px dashed black; */
+    position: absolute;
+    border-radius: 20px;
+    left: -250px;
+    top: 122px;
+    /* transform: translate(-50%, -50%); */
+    width: 250px;
+    height: 272px;
+    background-color: palegoldenrod;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showUploader {
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: translateX(250px);
+}
+
+.removeUploader {
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: translateX(-250px);
+}
+
+div.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(218, 165, 32, 0.4);
+    z-index: 199;
+}
+
+div.app-left {
+    width: 42%;
+    height: 100%;
+}
+
+div.app-right {
+    width: 58%;
+    height: 100%;
+}
+
+div.profileContainer {
+    position: fixed;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    top: 82px;
+}
+
+div.bioContainer {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 20px 0 0 20px;
+    padding: 10px;
+    width: 550px;
+    height: 250px;
+    display: flex;
+}
+
+div.bioContainer img.profilePic {
+    height: 180px;
+    width: 180px;
+}
+
+div.other-profile-bioContainer {
+    margin: 10px 0 0 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    height: 150px;
+}
+
+button.addFriend {
+    position: relative;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: palegoldenrod;
+    font-size: 10pt;
+}
+
+button.unfriend {
+    position: relative;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    border: 2px red solid;
+    box-shadow: red 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: palegoldenrod;
+    font-size: 10pt;
+}
+
+button.pending {
+    position: relative;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    /* border: 2px palegoldenrod solid; */
+    border-top: 1px palegoldenrod solid;
+    border-left: 1px palegoldenrod solid;
+    border-right: 2px palegoldenrod solid;
+    border-bottom: 2px palegoldenrod solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: black;
+    color: palegoldenrod;
+    font-size: 10pt;
+}
+
+img.linkLogo {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 10px 0 20px;
+}
+
+button.bioSubmit {
+    position: relative;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: palegoldenrod;
+    font-size: 10pt;
+}
+
+div.profilePicContainer {
+    width: 200px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    border-right: 2px solid black;
+    border-radius: 20px;
+}
+
+input.inputFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+input.inputFile + label {
+    font-size: 14pt;
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    color: black;
+    border-radius: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input.inputFile:active + label {
+    transform: translateY(2px);
+}
+
+div.bioTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 330px;
+    height: 250px;
+    padding-right: 10px;
+}
+
+div.bioText {
+    width: 330px;
+}
+
+button.bioSubmit {
+    position: relative;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: palegoldenrod;
+    font-size: 10pt;
+}
+
+span.username {
+    width: 330px;
+    margin-left: 30px;
+    margin-right: 20px;
+    font-family: "Arizona Text Thin";
+}
+
+div.bioEditor {
+    margin: 10px 0 0 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    height: 150px;
+}
+
+div.bio {
+    width: 275px;
+    height: auto;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+div.edit {
+    width: 275px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    background-color: palegoldenrod;
+}
+
+button.bioEditor {
+    outline: none;
+    border: none;
+    text-decoration: underline;
+}
+
+textarea.bioEditor {
+    width: 275px;
+    height: 23px;
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+div.links {
+    margin: 10px 0;
+    width: 275px;
+    overflow-x: scroll;
+}
+
+div.links::-webkit-scrollbar {
+    display: none;
+}
+
+div.link-edit-no-bio {
+    top: 152px;
+    width: 275px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    background-color: palegoldenrod;
+}
+
+div.link-edit {
+    top: 185px;
+    width: 275px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    background-color: palegoldenrod;
+}
+
+input.linkEditor {
+    height: 23px;
+    width: 275px;
+    outline: none;
+    border: none;
+    resize: none;
+    margin-bottom: 10px;
+    padding: 0;
+    background-color: transparent;
+    font-size: 14pt;
+    /* overflow-x: scroll; */
+}
+
+button.linkSubmit {
+    position: absolute;
+    top: 185px;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    border: 2px black solid;
+    box-shadow: black 2px 2px 0 0;
+    border-radius: 7pt;
+    background-color: palegoldenrod;
+    font-size: 10pt;
+}
+
+/* writing component container */
+
+button.writingComponent {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 30px 30px 0;
+    width: 70px;
+    height: 70px;
+    border: 2px black solid;
+    border-radius: 50%;
+    font-size: 30pt;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+}
+
+button.writingComponent:active {
+    transform: translateY(2px);
+}
+
+button.writingComponent:hover {
+    transform: scale(1.5);
+    background-color: rgba(218, 165, 32, 0.4);
+}
+
+div.writingComponentContainer {
+    border-radius: 20px;
+    padding: 10px;
+    width: 65%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: palegoldenrod;
+    z-index: 200;
+}
+
+/* div.writingComponentContainer {
+    border: 1px dashed black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 733px;
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 43px;
+    top: 100%;
+    background-color: palegoldenrod;
+    z-index: 200;
+}
+
+.showWritingComponentContainer {
+    transition-property: transform;
+    transition-duration: 1.5s;
+    transform: translateY(-85%);
+} */
+
+div.writingComponent {
+    border: 1px black solid;
+    border-radius: 20px;
+    height: 85%;
+    width: 85%;
+    word-wrap: break-word;
+    overflow: scroll;
+    margin: 20px 10px 0;
+    /* width: 100%; */
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Set default font-family */
+.writingComponentContainer .ql-editor {
+    font-family: "Arizona Text Regular";
+    font-size: 14pt;
+}
+
+/* Set dropdown font-families */
+.ql-font span[data-label="Arizona"]::before {
+    font-family: "Arizona Text Regular";
+}
+.ql-font span[data-label="Arizona Thin"]::before {
+    font-family: "Arizona Text Thin";
+}
+.ql-font span[data-label="Diatype"]::before {
+    font-family: "Diatype Mono Light";
+}
+
+/* Set content font-families */
+.ql-font-Arizona {
+    font-family: "Arizona Text Regular";
+}
+.ql-font-ArizonaThin {
+    font-family: "Arizona Text Thin";
+}
+.ql-font-Diatype {
+    font-family: "Diatype Mono Light";
+}
+
+.ql-toolbar.ql-snow {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid black !important;
+    border-radius: 20px;
+}
+
+.ql-container.ql-snow {
+    border: none !important;
+}
+
+.ql-snow img {
+    max-width: 600px !important;
+    display: block;
+    height: auto;
+}
+
+.ql-snow .ql-picker-options {
+    background-color: palegoldenrod !important;
+    border-top: 0 !important;
+    border-bottom: 1px black solid !important;
+    border-left: 1px black solid !important;
+    border-right: 1px black solid !important;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    border-top: 1px black solid !important;
+    border-bottom: 0 !important;
+    border-left: 1px black solid !important;
+    border-right: 1px black solid !important;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    color: black !important;
+}
+
+.ql-stroke {
+    stroke: black !important;
+}
+
+/* wall container */
+
+div.wallContainer {
+    /* border: 2px solid black; */
+    /* border-top: 2px solid black; */
+    /* border-right: 2px solid black;
+    border-bottom: 2px solid black; */
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 750px;
+    height: 615px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+div.wallContainer.wallBlock {
+    justify-content: center;
+    font-size: 18pt;
+}
+
+div.wallContainer::-webkit-scrollbar {
+    display: none;
+}
+
+div.wallTitleContainer {
+    display: block;
+}
+
+div.wall {
+    /* border: 2px dashed black; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.wallPostWrapper {
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+div.wallPostEndBlock {
+    position: relative;
+    background-color: transparent;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+div.post {
+    padding-left: 20px;
+}
+
+div.post img {
+    max-width: 600px;
+    /* display: block; */
+    height: auto;
+}
+
+div.postDetails {
+    font-size: 10pt;
+}
+
+a.logout {
+    color: black;
+}
+
+section.bio {
+    margin: 20px 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+}
+
+/* friends */
+
+div.friendsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 696px;
+    z-index: 0;
+}
+
+div.friends {
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+    width: inherit;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.friends .title {
+    text-align: left;
+    font-size: 24pt;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+div.friendsResultContainer {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+div.friendsResultContainer::-webkit-scrollbar {
+    display: none;
+}
+
+div.requestResultContainer {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+div.requestResultContainer::-webkit-scrollbar {
+    display: none;
+}
+
+div.requests {
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+div.requests .title {
+    text-align: left;
+    font-size: 24pt;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+div.searchResult a {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+div.searchResult img.profilePic {
+    height: 80px;
+    width: 80px;
+}
+
+div.buttonBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+div.requestResultContainer div.searchResult {
+    height: 160px;
+}
+
+div.searchResult button.addFriend {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: none;
+    border: 1px solid black;
+    padding: 0;
+    font-size: 14pt;
+}
+
+div.searchResult button.addFriend:active {
+    transform: translateY(2px);
+}
+
+div.searchResult button.unfriend {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: none;
+    border: 1px solid red;
+    padding: 0;
+}
+
+div.searchResult button.unfriend:active {
+    transform: translateY(2px);
+}
+
+div.findUsers {
+    /* border: 2px dashed blue; */
+    width: 100%;
+    margin-top: 10px;
+}
+
+input.findUsers {
+    padding-left: 20px;
+    height: 40px;
+    border: 0;
+    background-color: transparent;
+    font-size: 24pt;
+    font-family: "Arizona Text Thin Italic";
+}
+
+input.findUsers::placeholder {
+    opacity: 1;
+}
+
+div.searchResultContainer {
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    height: 186px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+div.searchResult {
+    border: 1px solid black;
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 125px;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.searchResultNames {
+    margin-top: 10px;
+    font-size: 12pt;
+}
+
+div.searchResultContainer img.profilePic {
+    height: 80px;
+    width: 80px;
+}
+
+/* GLOBAL CHAT */
+
+div.additionalBioContainer {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 20px 0 20px 20px;
+    width: 570px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+section.globalChat {
+    /* position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.messageContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 272px;
+    width: 100%;
+    overflow: scroll;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+section.messageContainer::-webkit-scrollbar {
+    display: none;
+}
+
+div.messageWrap {
+    margin: 10px 10px;
+}
+
+div.messageSender {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+div.messageSender img.profilePic {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+div.messageSender a {
+    display: flex;
+}
+
+span.messageSender {
+    font-size: 16pt;
+    font-family: "Arizona Text Thin";
+}
+
+div.messageText {
+    margin-left: 20px;
+}
+
+textarea.messageInput {
+    width: 75%;
+    margin: 10px 0;
+    resize: none;
+    outline: none;
+    border: none;
+    border-right: 2px solid black;
+    border-radius: 10px;
+}
+
+div.globalChatInputContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 87px;
+}
+
+div.globalChatInputContainer button.submit {
+    margin-left: 15px;
+}
