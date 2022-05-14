@@ -44,7 +44,7 @@ CREATE TABLE wall(
 );
 
 CREATE TABLE chat(
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
     sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     message TEXT NOT NULL,
