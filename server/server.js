@@ -7,7 +7,10 @@ const io = require("socket.io")(server, {
     allowRequest: (req, callback) =>
         callback(
             null,
-            req.headers.referer.startsWith("https://b-t-w.herokuapp.com/")
+            req.headers.referer.startsWith(
+                // "https://b-t-w.herokuapp.com/"
+                "http://localhost:3000"
+            )
         ),
 });
 const cookieSession = require("cookie-session");
