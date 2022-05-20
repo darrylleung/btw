@@ -8,8 +8,8 @@ const io = require("socket.io")(server, {
         callback(
             null,
             req.headers.referer.startsWith(
-                // "https://b-t-w.herokuapp.com/"
-                "http://localhost:3000"
+                "https://b-t-w.herokuapp.com/"
+                // "http://localhost:3000"
             )
         ),
 });
