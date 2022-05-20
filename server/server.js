@@ -7,10 +7,7 @@ const io = require("socket.io")(server, {
     allowRequest: (req, callback) =>
         callback(
             null,
-            req.headers.referer.startsWith(
-                "https://b-t-w.herokuapp.com/"
-                // "http://localhost:3000"
-            )
+            req.headers.referer.startsWith("https://b-t-w.herokuapp.com:24262")
         ),
 });
 const cookieSession = require("cookie-session");
@@ -488,7 +485,7 @@ server.listen(process.env.PORT || 3001, function () {
     console.log("I'm listening.");
 });
 
-io.on("connection", function (socket) {
+io.on("connection", (socket) => {
     console.log("New Connection!");
     const userId = socket.request.session.userId;
     console.log("userId: ", userId);
